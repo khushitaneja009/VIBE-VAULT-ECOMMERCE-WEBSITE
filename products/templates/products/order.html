@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - ShopHub</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Checkout - VibeVault</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -30,48 +33,107 @@
             flex-direction: column;
         }
 
-        .top-bar {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
-            padding: 16px 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            color: white;
+        /* Modern Navbar */
+        .modern-navbar {
+            background: linear-gradient(135deg, #80628f 0%, #9575a8 100%);
+            padding: 16px 0;
+            box-shadow: 0 2px 12px rgba(128, 98, 143, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-        .top-bar-content {
-            max-width: 1000px;
+        
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 24px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
-
-        .brand {
-            font-size: 24px;
-            font-weight: 700;
+        
+        .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
+            color: white;
+            text-decoration: none;
+            font-family: Montserrat, sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
-
-        .progress-steps {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+        
+        .brand-logo:hover { 
+            transform: scale(1.05); 
+            text-decoration: none; 
+            color: white; 
         }
-
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
+        
+        .brand-logo i { 
+            font-size: 32px; 
         }
-
-        .step.active {
-            background: rgba(255, 255, 255, 0.3);
+        
+        .brand-vibe { 
+            background: linear-gradient(45deg, #ffd89b, #19547b); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        
+        .nav-actions { 
+            display: flex; 
+            gap: 12px; 
+            align-items: center; 
+            flex-wrap: wrap; 
+        }
+        
+        .nav-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 10px 20px; 
+            background: rgba(255, 255, 255, 0.2); 
+            color: white; 
+            border: 2px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-size: 15px; 
+            font-weight: 600; 
+            transition: all 0.3s ease; 
+        }
+        
+        .nav-btn:hover { 
+            background: white; 
+            color: var(--primary-color); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+            text-decoration: none; 
+        }
+        
+        .nav-btn.primary { 
+            background: var(--accent-color); 
+            border-color: var(--accent-color); 
+        }
+        
+        .nav-btn.primary:hover { 
+            background: #4aa9a7; 
+            color: white; 
+        }
+        
+        .nav-btn.logout { 
+            background: rgba(255, 71, 87, 0.2); 
+            border-color: rgba(255, 71, 87, 0.5); 
+        }
+        
+        .nav-btn.logout:hover { 
+            background: #ff4757; 
+            color: white; 
+            border-color: #ff4757; 
         }
 
         .main-container {
@@ -85,36 +147,107 @@
         .checkout-card {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
-            max-width: 700px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+            max-width: 1200px;
             width: 100%;
             overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
-        .card-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
-            color: white;
-            padding: 32px;
-            text-align: center;
+        .card-left {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
-        .card-header h2 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
+        .card-left h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            color: var(--text-color);
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 12px;
         }
 
-        .card-header p {
-            opacity: 0.9;
-            font-size: 16px;
+        .card-left h2 i {
+            color: var(--primary-color);
         }
 
-        .card-body {
-            padding: 40px;
+        .order-items {
+            margin-bottom: 24px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 15px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 4px;
+        }
+
+        .item-qty {
+            color: var(--light-text);
+            font-size: 13px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(128, 98, 143, 0.3);
+        }
+
+        .card-right {
+            padding: 50px 40px;
+            background: white;
         }
 
         .form-group {
@@ -261,64 +394,112 @@
             color: var(--success-color);
         }
 
-        @media (max-width: 768px) {
-            .card-header h2 {
-                font-size: 24px;
+        .back-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 14px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .checkout-card {
+                grid-template-columns: 1fr;
             }
 
-            .card-body {
-                padding: 24px;
+            .card-left {
+                padding: 40px 30px;
+            }
+
+            .card-left h2 {
+                font-size: 32px;
+            }
+
+            .card-right {
+                padding: 40px 30px;
             }
 
             .progress-steps {
                 display: none;
             }
         }
+
+        @media (max-width: 480px) {
+            .card-left, .card-right {
+                padding: 30px 20px;
+            }
+
+            .back-buttons {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
-    <div class="top-bar-content">
-        <div class="brand">
-            <i class="fas fa-shopping-bag"></i>
-            ShopHub
-        </div>
-        <div class="progress-steps">
-            <div class="step">
-                <i class="fas fa-check-circle"></i>
-                Cart
-            </div>
-            <div class="step active">
-                <i class="fas fa-shipping-fast"></i>
-                Checkout
-            </div>
-            <div class="step">
-                <i class="fas fa-check"></i>
-                Complete
-            </div>
+<nav class="modern-navbar">
+    <div class="nav-container">
+        <a href="/products/" class="brand-logo">
+            <i class="fas fa-gem"></i>
+            <span>VIBE<span class="brand-vibe">VAULT</span></span>
+        </a>
+        
+        <div class="nav-actions">
+            <a href="/categories/" class="nav-btn">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="/cart/" class="nav-btn primary">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            {% if user.is_authenticated %}
+                <a href="/logout/" class="nav-btn logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            {% else %}
+                <a href="/login/" class="nav-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            {% endif %}
         </div>
     </div>
-</div>
+</nav>
 
 <div class="main-container">
     <div class="checkout-card">
-        <div class="card-header">
+        <div class="card-left">
             <h2>
-                <i class="fas fa-shipping-fast"></i>
-                Complete Your Order
+                <i class="fas fa-receipt"></i>
+                Order Summary
             </h2>
-            <p>Fill in your delivery details below</p>
-        </div>
-
-        <div class="card-body">
+            
             <div class="order-summary">
-                <h3>
-                    <i class="fas fa-receipt"></i>
-                    Order Summary
-                </h3>
                 <div class="summary-row">
-                    <span class="summary-label">Order Total</span>
+                    <span class="summary-label">Items Total</span>
                     <span class="summary-value">₹{{ total_price|floatformat:0 }}</span>
                 </div>
                 <div class="summary-row">
@@ -326,10 +507,40 @@
                     <span class="summary-value" style="color: var(--success-color);">FREE</span>
                 </div>
                 <div class="summary-row">
-                    <span class="summary-label">Total Amount</span>
+                    <span class="summary-label"><strong>Total Amount</strong></span>
                     <span class="summary-value">₹{{ total_price|floatformat:0 }}</span>
                 </div>
             </div>
+
+            <div class="order-items">
+                {% for item in cart_items %}
+                <div class="order-item">
+                    <div class="item-details">
+                        <div class="item-name">{{ item.product.name }}</div>
+                        <div class="item-qty">Quantity: {{ item.quantity }}</div>
+                    </div>
+                    <div class="item-price">₹{{ item.get_total_price|floatformat:0 }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="action-buttons">
+                <a href="{% url 'cart_view' %}" class="action-btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Cart
+                </a>
+                <a href="{% url 'all_products' %}" class="action-btn btn-secondary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+
+        <div class="card-right">
+            <h2 style="margin-bottom: 30px; color: var(--text-color); font-size: 28px;">
+                <i class="fas fa-map-marker-alt"></i>
+                Delivery Information
+            </h2>
 
             <form method="POST" action="{% url 'submit_order' %}">
                 {% csrf_token %}
@@ -363,7 +574,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         Delivery Address
                     </label>
-                    <textarea name="address" id="address" required placeholder="Enter your complete delivery address"></textarea>
+                    <textarea name="address" id="address" required placeholder="Enter your complete delivery address with pin code"></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">
@@ -376,10 +587,6 @@
                     Your information is secure and encrypted
                 </div>
             </form>
-
-            <a href="{% url 'all_products' %}" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to Products
-            </a>
         </div>
     </div>
 </div>

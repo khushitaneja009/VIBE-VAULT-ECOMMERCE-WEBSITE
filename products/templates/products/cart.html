@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - ShopHub</title>
+    <title>Shopping Cart - VibeVault</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -30,40 +30,67 @@
             min-height: 100vh;
         }
 
-        /* Navbar */
-        .top-nav {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
-            padding: 16px 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        /* Modern Navbar */
+        .modern-navbar {
+            background: linear-gradient(135deg, #80628f 0%, #9575a8 100%);
+            padding: 16px 0;
+            box-shadow: 0 2px 12px rgba(128, 98, 143, 0.2);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
-        .nav-content {
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .nav-brand {
-            color: white;
-            font-size: 24px;
-            font-weight: 700;
+        .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
-        }
-
-        .nav-brand:hover {
             color: white;
             text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
 
-        .back-btn {
+        .brand-logo:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand-logo i {
+            font-size: 32px;
+        }
+
+        .brand-vibe {
+            background: linear-gradient(45deg, #ffd89b, #19547b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -73,15 +100,39 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
             text-decoration: none;
+            font-size: 15px;
             font-weight: 600;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .back-btn:hover {
+        .nav-btn:hover {
             background: white;
             color: var(--primary-color);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             text-decoration: none;
+        }
+
+        .nav-btn.primary {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .nav-btn.primary:hover {
+            background: #4aa9a7;
+            color: white;
+        }
+
+        .nav-btn.logout {
+            background: rgba(255, 71, 87, 0.2);
+            border-color: rgba(255, 71, 87, 0.5);
+        }
+
+        .nav-btn.logout:hover {
+            background: #ff4757;
+            color: white;
+            border-color: #ff4757;
         }
         
         .cart-container {
@@ -352,23 +403,29 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 16px 32px;
+            padding: 18px 40px;
             background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
-            color: white;
+            color: white !important;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 14px;
+            font-size: 18px;
             font-weight: 700;
-            text-decoration: none;
+            text-decoration: none !important;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(128, 98, 143, 0.3);
         }
 
         .shop-now-btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(128, 98, 143, 0.4);
-            text-decoration: none;
-            color: white;
+            box-shadow: 0 12px 32px rgba(128, 98, 143, 0.5);
+            text-decoration: none !important;
+            color: white !important;
+            background: linear-gradient(135deg, #9575a8 0%, var(--primary-color) 100%);
+        }
+        
+        .shop-now-btn i {
+            font-size: 20px;
         }
 
         @media (max-width: 1024px) {
@@ -404,16 +461,34 @@
 <body>
 
 <!-- Navigation -->
-<nav class="top-nav">
-    <div class="nav-content">
-        <a href="/products/" class="nav-brand">
-            <i class="fas fa-shopping-bag"></i>
-            ShopHub
+<nav class="modern-navbar">
+    <div class="nav-container">
+        <a href="/products/" class="brand-logo">
+            <i class="fas fa-gem"></i>
+            <span>VIBE<span class="brand-vibe">VAULT</span></span>
         </a>
-        <a href="/products/" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-            Continue Shopping
-        </a>
+        
+        <div class="nav-actions">
+            <a href="/categories/" class="nav-btn">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="/cart/" class="nav-btn primary">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            {% if user.is_authenticated %}
+                <a href="/logout/" class="nav-btn logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            {% else %}
+                <a href="/login/" class="nav-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            {% endif %}
+        </div>
     </div>
 </nav>
 

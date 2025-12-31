@@ -27,50 +27,103 @@
             padding: 0;
         }
 
-        /* Header */
-        .product-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
+        /* Navbar */
+        /* Modern Navbar */
+        .modern-navbar { background: linear-gradient(135deg, #80628f 0%, #9575a8 100%); padding: 16px 0; box-shadow: 0 2px 12px rgba(128, 98, 143, 0.2); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; color: white; text-decoration: none; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease; }
+        .brand-logo:hover { transform: scale(1.05); text-decoration: none; color: white; }
+        .brand-logo i { font-size: 32px; }
+        .brand-vibe { background: linear-gradient(45deg, #ffd89b, #19547b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .nav-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.3s ease; }
+        .nav-btn:hover { background: white; color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); text-decoration: none; }
+        .nav-btn.primary { background: var(--accent-color); border-color: var(--accent-color); }
+        .nav-btn.primary:hover { background: #4aa9a7; color: white; }
+        .nav-btn.logout { background: rgba(255, 71, 87, 0.2); border-color: rgba(255, 71, 87, 0.5); }
+        .nav-btn.logout:hover { background: #ff4757; color: white; border-color: #ff4757; }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
+            padding: 18px 0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
-        .header-container {
-            max-width: 1140px;
+
+        .navbar-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .brand {
-            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
             font-weight: 700;
             color: white;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
-        
+
         .brand:hover {
-            color: white;
-            text-decoration: none;
+            transform: translateY(-2px);
+            color: var(--accent-color);
         }
         
-        .nav-links {
+        }
+
+        .nav-actions {
             display: flex;
-            gap: 20px;
+            gap: 16px;
+            align-items: center;
         }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        
-        .nav-link:hover {
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.15);
             color: white;
             text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
         }
 
         /* Product container */
@@ -498,27 +551,45 @@
 </head>
 <body>
 
-<header class="product-header">
-    <div class="header-container">
-        <a href="/home/" class="brand">Premium Shop</a>
-        <div class="nav-links">
-            <a href="/products/" class="nav-link">Products</a>
-            <a href="/categories/" class="nav-link">Categories</a>
-            <a href="/cart/" class="nav-link">Cart</a>
+<nav class="modern-navbar">
+    <div class="nav-container">
+        <a href="/products/" class="brand-logo">
+            <i class="fas fa-gem"></i>
+            <span>VIBE<span class="brand-vibe">VAULT</span></span>
+        </a>
         
+        <div class="nav-actions">
+            <a href="/categories/" class="nav-btn">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="/cart/" class="nav-btn primary">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            {% if user.is_authenticated %}
+                <a href="/logout/" class="nav-btn logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            {% else %}
+                <a href="/login/" class="nav-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            {% endif %}
         </div>
     </div>
-</header>
+</nav>
 
 <div class="main-container">
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="/home/">Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="/products/">Products</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current">{{ product.name }}</span>
-    </div>
+        <div class="breadcrumb">
+            <a href="{% url 'all_products' %}">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="{% url 'all_products' %}">Products</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">{{ product.name }}</span>
+        </div>
 
     <div class="product-detail">
         <!-- Product Gallery -->
@@ -655,6 +726,22 @@
             }
         });
     });
+
+    // Update cart count on page load
+    function updateCartCount() {
+        fetch('/cart/count/')
+            .then(response => response.json())
+            .then(data => {
+                const cartBadge = document.getElementById('cart-count');
+                if (cartBadge) {
+                    cartBadge.textContent = data.count;
+                }
+            })
+            .catch(error => console.error('Error fetching cart count:', error));
+    }
+
+    // Update cart count on page load
+    updateCartCount();
 </script>
 
 </body>

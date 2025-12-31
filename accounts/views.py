@@ -12,8 +12,8 @@ def signup_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
+        password = request.POST.get('password1')
+        confirm_password = request.POST.get('password2')
 
         # Validate passwords match
         if password != confirm_password:
@@ -33,8 +33,11 @@ def signup_view(request):
         # Create user
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
-        messages.success(request, 'Account created successfully! Please login.')
-        return redirect('login')
+        
+        # Auto login after signup
+        login(request, user)
+        messages.success(request, f'Welcome to VibeVault, {username}!')
+        return redirect('all_products')
 
     return render(request, 'accounts/signup.html')
 
