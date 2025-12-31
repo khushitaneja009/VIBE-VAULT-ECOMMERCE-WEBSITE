@@ -1,0 +1,530 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopHub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #80628f;
+            --accent-color: #5bc0be;
+            --text-color: #333;
+            --light-text: #6c757d;
+            --bg-color: #f8f9fa;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
+            padding: 16px 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-brand:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .cart-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--text-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--light-text);
+        }
+
+        .cart-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-item {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 24px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .cart-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .item-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .item-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 12px 0;
+        }
+
+        .item-subtotal {
+            font-size: 16px;
+            color: var(--light-text);
+            margin-top: 8px;
+        }
+
+        .item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--bg-color);
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .qty-display {
+            width: 50px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .remove-btn {
+            background: none;
+            border: 2px solid var(--danger-color);
+            color: var(--danger-color);
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remove-btn:hover {
+            background: var(--danger-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cart-summary {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--bg-color);
+        }
+
+        .summary-row.total {
+            border-bottom: none;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 16px;
+            padding-top: 24px;
+        }
+
+        .summary-label {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+
+        .summary-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .summary-row.total .summary-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .summary-row.total .summary-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--success-color) 0%, #218838 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(40, 167, 69, 0.4);
+        }
+
+        .empty-cart {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .empty-cart i {
+            font-size: 100px;
+            color: var(--light-text);
+            opacity: 0.3;
+            margin-bottom: 24px;
+        }
+
+        .empty-cart h3 {
+            font-size: 28px;
+            color: var(--text-color);
+            margin-bottom: 16px;
+        }
+
+        .empty-cart p {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 32px;
+        }
+
+        .shop-now-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #9575a8 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .shop-now-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(128, 98, 143, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .item-image {
+                margin: 0 auto;
+            }
+
+            .item-actions {
+                align-items: center;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="top-nav">
+    <div class="nav-content">
+        <a href="/products/" class="nav-brand">
+            <i class="fas fa-shopping-bag"></i>
+            ShopHub
+        </a>
+        <a href="/products/" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Continue Shopping
+        </a>
+    </div>
+</nav>
+
+<div class="cart-container">
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-shopping-cart"></i>
+            Your Shopping Cart
+        </h1>
+        <p>Review your items and proceed to checkout</p>
+    </div>
+
+    {% if cart_items %}
+    <div class="cart-grid">
+        <div class="cart-items">
+            {% for item in cart_items %}
+            <div class="cart-item">
+                {% if item.product.image.name %}
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="item-image" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'%3E%3Crect fill=\'%23f5f7fa\' width=\'200\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%2380628f\' font-size=\'60\' font-family=\'Arial\'%3E📦%3C/text%3E%3C/svg%3E';">
+                {% else %}
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f5f7fa' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%2380628f' font-size='60' font-family='Arial'%3E📦%3C/text%3E%3C/svg%3E" alt="{{ item.product.name }}" class="item-image">
+                {% endif %}
+                
+                <div class="item-details">
+                    <h3 class="item-name">{{ item.product.name }}</h3>
+                    <p style="color: var(--light-text); margin: 8px 0;">{{ item.product.description|truncatewords:15 }}</p>
+                    <div class="item-price">₹{{ item.product.price|floatformat:0 }}</div>
+                    <div class="item-subtotal">
+                        <strong>Subtotal:</strong> ₹{{ item.get_total_price|floatformat:0 }}
+                    </div>
+                </div>
+
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        <form method="POST" action="{% url 'update_quantity' item.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="decrease">
+                            <button type="submit" class="qty-btn">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </form>
+                        
+                        <span class="qty-display">{{ item.quantity }}</span>
+                        
+                        <form method="POST" action="{% url 'update_quantity' item.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="increase">
+                            <button type="submit" class="qty-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <form method="POST" action="{% url 'remove_item' item.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="remove-btn">
+                            <i class="fas fa-trash-alt"></i>
+                            Remove
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="cart-summary">
+            <h3 class="summary-title">
+                <i class="fas fa-receipt"></i>
+                Order Summary
+            </h3>
+
+            <div class="summary-row">
+                <span class="summary-label">Items ({{ cart_items|length }})</span>
+                <span class="summary-value">₹{{ total_price|floatformat:0 }}</span>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Delivery</span>
+                <span class="summary-value" style="color: var(--success-color);">FREE</span>
+            </div>
+
+            <div class="summary-row total">
+                <span class="summary-label">Total</span>
+                <span class="summary-value">₹{{ total_price|floatformat:0 }}</span>
+            </div>
+
+            <form method="POST" action="{% url 'order' %}">
+                {% csrf_token %}
+                <button type="submit" class="checkout-btn">
+                    <i class="fas fa-lock"></i>
+                    Proceed to Checkout
+                </button>
+            </form>
+
+            <p style="text-align: center; color: var(--light-text); font-size: 14px; margin-top: 16px;">
+                <i class="fas fa-shield-alt"></i> Secure Checkout
+            </p>
+        </div>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Your Cart is Empty</h3>
+        <p>Looks like you haven't added anything to your cart yet.</p>
+        <a href="/products/" class="shop-now-btn">
+            <i class="fas fa-shopping-bag"></i>
+            Start Shopping
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

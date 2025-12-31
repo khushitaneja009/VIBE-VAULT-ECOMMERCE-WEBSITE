@@ -1,0 +1,611 @@
+{
+  "categories": [
+    {
+      "name": "Electronics"
+    },
+    {
+      "name": "Fashion"
+    },
+    {
+      "name": "Home & Kitchen"
+    },
+    {
+      "name": "Books"
+    },
+    {
+      "name": "Sports & Fitness"
+    },
+    {
+      "name": "Toys & Games"
+    },
+    {
+      "name": "Beauty & Personal Care"
+    },
+    {
+      "name": "Mobile & Accessories"
+    },
+    {
+      "name": "Furniture"
+    },
+    {
+      "name": "Jewelry & Watches"
+    }
+  ],
+  "products": [
+    {
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-cancelling wireless headphones with 30-hour battery life. Crystal clear sound quality with deep bass and comfortable ear cushions for all-day wear.",
+      "price": 2999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Smart LED TV 55 inch",
+      "description": "4K Ultra HD Smart LED TV with built-in WiFi, HDR support, and multiple streaming apps. Perfect for your home entertainment system.",
+      "price": 42999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Gaming Laptop",
+      "description": "High-performance gaming laptop with Intel i7 processor, 16GB RAM, NVIDIA RTX 3060 graphics card, and 512GB SSD storage.",
+      "price": 89999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with adjustable DPI settings, long battery life, and silent click buttons. Perfect for work and gaming.",
+      "price": 799.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Portable Bluetooth Speaker",
+      "description": "Waterproof portable speaker with 360-degree sound, 12-hour battery life, and built-in microphone for hands-free calls.",
+      "price": 1999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Digital Camera DSLR",
+      "description": "Professional 24MP DSLR camera with 18-55mm lens, Full HD video recording, and WiFi connectivity for instant photo sharing.",
+      "price": 45999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Smartwatch Fitness Tracker",
+      "description": "Advanced fitness tracker with heart rate monitor, sleep tracking, GPS, water resistance, and 7-day battery life.",
+      "price": 3499.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Tablet 10.5 inch",
+      "description": "Powerful tablet with Octa-core processor, 4GB RAM, 64GB storage, and stunning 2K display. Includes stylus pen.",
+      "price": 24999.00,
+      "category": "Electronics",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Men's Casual Shirt",
+      "description": "100% cotton casual shirt with modern slim fit design. Available in multiple colors and sizes. Perfect for everyday wear.",
+      "price": 899.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Women's Summer Dress",
+      "description": "Elegant floral print summer dress made from breathable fabric. Comfortable fit with adjustable straps and side pockets.",
+      "price": 1299.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Men's Denim Jeans",
+      "description": "Classic straight-fit denim jeans with comfortable stretch fabric. Durable construction with reinforced stitching.",
+      "price": 1499.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Women's Leather Handbag",
+      "description": "Genuine leather handbag with multiple compartments, adjustable shoulder strap, and elegant design. Perfect for any occasion.",
+      "price": 2499.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Men's Running Shoes",
+      "description": "Lightweight running shoes with cushioned sole, breathable mesh upper, and excellent grip for all terrains.",
+      "price": 2199.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Women's Winter Jacket",
+      "description": "Warm and stylish winter jacket with insulated padding, water-resistant fabric, and detachable hood.",
+      "price": 3499.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Men's Formal Blazer",
+      "description": "Premium quality formal blazer with notch lapel collar, two-button closure, and multiple pockets. Perfect for office wear.",
+      "price": 3999.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Women's Ethnic Kurta Set",
+      "description": "Beautiful traditional kurta set with intricate embroidery, comfortable palazzo pants, and matching dupatta.",
+      "price": 1799.00,
+      "category": "Fashion",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Non-Stick Cookware Set",
+      "description": "Complete 7-piece non-stick cookware set including pans, pots, and lids. Heat-resistant handles and dishwasher safe.",
+      "price": 4999.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Electric Kettle 1.8L",
+      "description": "Fast-boiling electric kettle with auto shut-off feature, boil-dry protection, and cordless serving. 1500W power.",
+      "price": 1299.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Food Processor",
+      "description": "Multifunctional food processor with 10 speed settings, multiple blades, and 1.5L capacity. Perfect for chopping, blending, and mixing.",
+      "price": 3499.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Bedsheet Set King Size",
+      "description": "Premium cotton bedsheet set with 2 pillow covers. Soft, breathable, and colorfast. Available in elegant designs.",
+      "price": 1899.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Dinner Set 24 Pieces",
+      "description": "Elegant porcelain dinner set for 6 people. Includes plates, bowls, and serving dishes. Microwave and dishwasher safe.",
+      "price": 2999.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Vacuum Cleaner",
+      "description": "Powerful bagless vacuum cleaner with HEPA filter, multiple attachments, and 5-meter cord. Perfect for all floor types.",
+      "price": 6999.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Air Fryer 4.2L",
+      "description": "Healthy oil-free cooking with 360-degree rapid air technology. Digital display, 8 preset cooking modes, and dishwasher-safe basket.",
+      "price": 5499.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Water Purifier RO+UV",
+      "description": "Advanced 7-stage water purification system with RO+UV+UF technology. 8L storage tank and TDS controller.",
+      "price": 12999.00,
+      "category": "Home & Kitchen",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "The Psychology of Money",
+      "description": "Bestselling book on financial wisdom and wealth building. Learn timeless lessons on money management and investing.",
+      "price": 349.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Atomic Habits",
+      "description": "Practical guide to building good habits and breaking bad ones. Transform your life with small changes that deliver remarkable results.",
+      "price": 399.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Harry Potter Complete Collection",
+      "description": "Complete set of all 7 Harry Potter books in a beautiful box set. Perfect gift for fantasy lovers.",
+      "price": 2499.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Sapiens: A Brief History",
+      "description": "International bestseller exploring the history of humankind from the Stone Age to the modern era.",
+      "price": 449.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Rich Dad Poor Dad",
+      "description": "Classic personal finance book that teaches financial literacy and building wealth. A must-read for everyone.",
+      "price": 299.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "The Alchemist",
+      "description": "Inspirational novel about following your dreams and listening to your heart. A modern classic loved worldwide.",
+      "price": 249.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Think and Grow Rich",
+      "description": "Timeless masterpiece on achieving success and prosperity. Contains the secret formula used by successful people.",
+      "price": 199.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "1984 by George Orwell",
+      "description": "Dystopian novel set in a totalitarian society. A thought-provoking classic that remains relevant today.",
+      "price": 279.00,
+      "category": "Books",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Yoga Mat with Bag",
+      "description": "Premium quality yoga mat with anti-slip surface, 6mm thickness, and carrying bag. Perfect for yoga and fitness exercises.",
+      "price": 899.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Adjustable Dumbbells Set",
+      "description": "Complete dumbbell set with adjustable weights from 2.5kg to 25kg. Perfect for home gym and strength training.",
+      "price": 4999.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Resistance Bands Set",
+      "description": "Premium resistance bands with 5 different resistance levels, door anchor, handles, and ankle straps. Complete workout solution.",
+      "price": 799.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Treadmill Motorized",
+      "description": "Foldable motorized treadmill with LCD display, 12 preset programs, and 2HP motor. Perfect for home cardio workouts.",
+      "price": 34999.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Cricket Bat English Willow",
+      "description": "Professional-grade cricket bat made from premium English willow. Perfectly balanced with comfortable grip.",
+      "price": 8999.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Badminton Racket Set",
+      "description": "Professional badminton racket set with 2 rackets, shuttle cocks, and carrying bag. Lightweight and durable.",
+      "price": 1499.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Football Size 5",
+      "description": "Official size 5 football with synthetic leather construction. Suitable for matches and practice sessions.",
+      "price": 699.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Gym Gloves with Wrist Support",
+      "description": "Premium workout gloves with enhanced grip, wrist support, and breathable fabric. Perfect for weightlifting.",
+      "price": 499.00,
+      "category": "Sports & Fitness",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Remote Control Car",
+      "description": "High-speed RC car with 2.4GHz remote control, rechargeable battery, and durable construction. Fun for all ages.",
+      "price": 1999.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Building Blocks Set 500 Pieces",
+      "description": "Creative building blocks set with 500 colorful pieces. Develops creativity and motor skills in children.",
+      "price": 1299.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Puzzle Game 1000 Pieces",
+      "description": "Challenging jigsaw puzzle with beautiful landscape image. Perfect for family time and brain exercise.",
+      "price": 499.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Board Game Collection",
+      "description": "Classic board game collection including Chess, Ludo, Snakes & Ladders. Perfect for family entertainment.",
+      "price": 799.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Soft Toy Teddy Bear",
+      "description": "Adorable soft and cuddly teddy bear made from high-quality plush fabric. Perfect gift for kids and loved ones.",
+      "price": 599.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Art & Craft Kit",
+      "description": "Complete art and craft kit with colors, brushes, papers, and craft materials. Encourages creativity in children.",
+      "price": 899.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Educational Robot Toy",
+      "description": "Programmable robot toy that teaches coding basics. Interactive learning with lights, sounds, and movements.",
+      "price": 2499.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Doll House with Furniture",
+      "description": "Beautiful 3-story dollhouse with furniture and accessories. Hours of imaginative play for children.",
+      "price": 3499.00,
+      "category": "Toys & Games",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Skin Care Gift Set",
+      "description": "Complete skincare routine set with cleanser, toner, moisturizer, and face mask. Suitable for all skin types.",
+      "price": 1999.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Hair Straightener Ceramic",
+      "description": "Professional ceramic hair straightener with adjustable temperature, fast heating, and anti-frizz technology.",
+      "price": 1499.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Perfume Gift Set Unisex",
+      "description": "Premium fragrance collection with 3 different scents. Long-lasting perfumes in elegant bottles.",
+      "price": 2499.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Makeup Kit Professional",
+      "description": "Complete professional makeup kit with eyeshadows, lipsticks, brushes, and cosmetic organizer.",
+      "price": 3499.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Electric Trimmer Men",
+      "description": "Cordless electric trimmer with multiple length settings, rechargeable battery, and washable blades.",
+      "price": 1299.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Face Wash Combo Pack",
+      "description": "Combo pack of 3 face washes for different skin concerns. Natural ingredients with no harmful chemicals.",
+      "price": 599.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Hair Dryer Professional",
+      "description": "Powerful 2000W hair dryer with ionic technology, 3 heat settings, and concentrator nozzle.",
+      "price": 1799.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Nail Art Kit Complete",
+      "description": "Professional nail art kit with gel polishes, UV lamp, nail tools, and decorative accessories.",
+      "price": 2199.00,
+      "category": "Beauty & Personal Care",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Smartphone 128GB",
+      "description": "Latest smartphone with 6.5-inch AMOLED display, 48MP quad camera, 8GB RAM, and 5000mAh battery with fast charging.",
+      "price": 18999.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Mobile Back Cover",
+      "description": "Shockproof mobile back cover with raised edges for screen protection. Slim design with perfect fit.",
+      "price": 299.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Tempered Glass Screen Protector",
+      "description": "9H hardness tempered glass screen protector with oleophobic coating. Easy installation and bubble-free.",
+      "price": 199.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Power Bank 20000mAh",
+      "description": "High-capacity power bank with dual USB ports, fast charging support, and LED battery indicator. Portable and reliable.",
+      "price": 1499.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Wireless Earbuds TWS",
+      "description": "True wireless earbuds with Bluetooth 5.0, touch controls, IPX7 water resistance, and 24-hour battery with charging case.",
+      "price": 2999.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Fast Charger 33W",
+      "description": "Ultra-fast 33W charger with Type-C cable. Charges your device from 0 to 50% in just 30 minutes.",
+      "price": 699.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Phone Holder Car Mount",
+      "description": "360-degree rotatable car phone holder with strong grip and anti-slip padding. Suitable for all phone sizes.",
+      "price": 399.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Selfie Stick with Tripod",
+      "description": "Extendable selfie stick with Bluetooth remote and tripod stand. Perfect for photos and videos.",
+      "price": 599.00,
+      "category": "Mobile & Accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Study Table with Storage",
+      "description": "Modern study table with multiple drawers and shelves. Sturdy construction with scratch-resistant finish.",
+      "price": 6999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Office Chair Ergonomic",
+      "description": "Comfortable ergonomic office chair with lumbar support, adjustable height, and 360-degree swivel.",
+      "price": 5499.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Bookshelf 5 Tier",
+      "description": "Spacious 5-tier bookshelf with modern design. Perfect for organizing books, decorative items, and storage boxes.",
+      "price": 4999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Sofa Set 3+1+1",
+      "description": "Elegant fabric sofa set with comfortable cushions. Modern design perfect for living room. Includes 3-seater and 2 single-seaters.",
+      "price": 34999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Dining Table Set 6 Seater",
+      "description": "Beautiful wooden dining table with 6 cushioned chairs. Sturdy construction with elegant finish.",
+      "price": 24999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Wardrobe 3 Door",
+      "description": "Spacious 3-door wardrobe with hanging space, shelves, and drawers. Mirrors on doors for added convenience.",
+      "price": 18999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Coffee Table Modern",
+      "description": "Stylish modern coffee table with storage space underneath. Tempered glass top with wooden frame.",
+      "price": 4499.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Bed King Size with Storage",
+      "description": "King-size bed with hydraulic storage. Premium quality wood with comfortable headboard design.",
+      "price": 29999.00,
+      "category": "Furniture",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Gold Plated Necklace Set",
+      "description": "Elegant gold-plated necklace set with matching earrings. Beautiful design perfect for traditional and modern outfits.",
+      "price": 1999.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Diamond Studded Earrings",
+      "description": "Beautiful diamond-studded earrings in 925 sterling silver. Timeless design perfect for any occasion.",
+      "price": 4999.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Men's Analog Watch",
+      "description": "Classic analog watch with stainless steel body, leather strap, and water-resistant design. Perfect for formal occasions.",
+      "price": 2499.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Silver Bracelet Women",
+      "description": "Elegant 925 sterling silver bracelet with intricate design. Adjustable size with secure clasp.",
+      "price": 1499.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Couple Ring Set",
+      "description": "Beautiful couple ring set in platinum finish. Matching designs symbolizing eternal love and commitment.",
+      "price": 1799.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Pearl Necklace",
+      "description": "Classic pearl necklace with genuine freshwater pearls. Elegant and timeless accessory for special occasions.",
+      "price": 3499.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Smart Watch Digital",
+      "description": "Digital smartwatch with touchscreen display, fitness tracking, notifications, and multiple watch faces.",
+      "price": 3999.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    },
+    {
+      "name": "Pendant with Chain",
+      "description": "Beautiful heart-shaped pendant with gold-plated chain. Perfect gift for loved ones on special occasions.",
+      "price": 899.00,
+      "category": "Jewelry & Watches",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakW9vxq-JPX_M-fMOBgryv7ADY0Y6md3jeg&s"
+    }
+  ],
+  "instructions": {
+    "note": "This JSON file contains dummy data for the Flipkart Clone project.",
+    "how_to_use": "Replace 'image_url' values with actual image URLs from free image sources like:",
+    "image_sources": [
+      "https://unsplash.com - Free high-quality images",
+      "https://pixabay.com - Free stock photos and images",
+      "https://pexels.com - Free stock photos",
+      "https://placeholder.com - Placeholder images for testing"
+    ],
+    "loading_data": "You can load this data into your Django database using a management command or Django admin interface",
+    "example_image_format": "https://images.unsplash.com/photo-1234567890?w=500&h=500",
+    "total_categories": 10,
+    "total_products": 80,
+    "products_per_category": "8 products per category"
+  }
+}

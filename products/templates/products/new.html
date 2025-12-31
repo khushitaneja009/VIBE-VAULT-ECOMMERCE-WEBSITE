@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'products/bootstrap.min.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .product-detail {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Adjust width to be responsive */
+        }
+
+        .product-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-image img {
+            width: 80%;
+            max-width: 500px; /* Set a maximum width */
+            height: 550px;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .product-info h4 {
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        .product-info p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .btn-add-cart {
+            background-color: #01090f;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product-info {
+                padding-left: 0;
+            }
+
+            .product-image img {
+                max-width: 100%; /* Make the image fully responsive */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <!-- Your navbar -->
+</nav>
+
+<div class="container">
+    <div class="product-detail">
+        <!-- Product Image -->
+        <div class="product-image">
+            {% if product.image.name %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:550px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f5f7fa,#c3cfe2);border-radius:10px;\'><i class=\'fas fa-shopping-bag\' style=\'font-size:80px;color:#80628f;opacity:0.3;\'></i></div>';">
+            {% else %}
+                <div style="width:100%;height:550px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f5f7fa,#c3cfe2);border-radius:10px;">
+                    <i class="fas fa-shopping-bag" style="font-size:80px;color:#80628f;opacity:0.3;"></i>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Product Information -->
+        <div class="product-info">
+            <h1>{{ product.name }}</h1> 
+            <h2>₹{{ product.price }}</h2>
+            <h2>{{ product.description }}</h2>
+
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                <a href="/products/" class="btn-add-cart">All Products</a>
+                <a href="/categories/" class="btn-add-cart">Back to Categories</a>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
